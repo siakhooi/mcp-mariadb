@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "mcp-mariadb": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/server.py"
+      ],
+      "env": {
+        "MCP_MARIADB_CONFIG": "${workspaceFolder}/example-config.yaml"
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+mariadb:
+  host: localhost
+  database: app
+  username: app
+  password: secret

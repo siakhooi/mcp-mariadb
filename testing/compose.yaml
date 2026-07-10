@@ -1,0 +1,16 @@
+services:
+  mariadb:
+    image: mariadb:11.4
+    container_name: mcp-mariadb-test
+    environment:
+      MARIADB_ROOT_PASSWORD: secret
+      MARIADB_DATABASE: app
+      MARIADB_USER: app
+      MARIADB_PASSWORD: secret
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "127.0.0.1", "-uroot", "-psecret"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
