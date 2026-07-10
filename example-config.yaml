@@ -1,5 +1,5 @@
 mariadb:
-  host: localhost
+  host: mcp-mariadb-test
   database: app
   username: app
   password: secret

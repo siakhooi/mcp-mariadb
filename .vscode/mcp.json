@@ -1,6 +1,6 @@
 {
   "servers": {
-    "mcp-mariadb": {
+    "mcp-mariadb-local": {
       "type": "stdio",
       "command": "${workspaceFolder}/.venv/bin/python",
       "args": [
@@ -9,6 +9,22 @@
       "env": {
         "MCP_MARIADB_CONFIG": "${workspaceFolder}/example-config.yaml"
       }
+    },
+    "mcp-mariadb-docker": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-v",
+        "${workspaceFolder}/example-config.yaml:/app/config.yaml",
+        "--network",
+        "mcp-net",
+        "-e",
+        "MCP_MARIADB_CONFIG=/app/config.yaml",
+        "mcp-mariadb:latest"
+      ]
     }
   }
 }
