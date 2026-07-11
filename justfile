@@ -2,9 +2,10 @@ test:
     python -m pytest
 run:
     MCP_MARIADB_CONFIG=example-config.yaml python server.py
-docker-build:
-    docker build -t siakhooi/mcp-mariadb:latest .
-
+build:
+    ./scripts/build.sh
+release:
+    ./scripts/release.sh
 
 start-mariadb:
     cd testing && docker compose up -d
