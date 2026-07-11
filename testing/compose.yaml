@@ -1,6 +1,6 @@
 services:
   mariadb:
-    image: mariadb:11.4
+    image: mariadb:latest
     container_name: mcp-mariadb-test
     environment:
       MARIADB_ROOT_PASSWORD: secret

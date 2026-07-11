@@ -23,7 +23,7 @@
         "mcp-net",
         "-e",
         "MCP_MARIADB_CONFIG=/app/config.yaml",
-        "mcp-mariadb:latest"
+        "siakhooi/mcp-mariadb:latest"
       ]
     }
   }
