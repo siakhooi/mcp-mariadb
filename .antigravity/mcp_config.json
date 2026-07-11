@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "mcp-mariadb-local": {
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/server.py"
+      ],
+      "env": {
+        "MCP_MARIADB_CONFIG": "${workspaceFolder}/example-config.yaml"
+      }
+    },
+    "mcp-mariadb-docker": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-v",
+        "${workspaceFolder}/example-config.yaml:/app/config.yaml",
+        "--network",
+        "mcp-net",
+        "-e",
+        "MCP_MARIADB_CONFIG=/app/config.yaml",
+        "mcp-mariadb:latest"
+      ]
+    }
+  }
+}
