@@ -1,15 +1,6 @@
 {
   "mcpServers": {
-    "mcp-mariadb-local": {
-      "command": "${workspaceFolder}/.venv/bin/python",
-      "args": [
-        "${workspaceFolder}/server.py"
-      ],
-      "env": {
-        "MCP_MARIADB_CONFIG": "${workspaceFolder}/example-config.yaml"
-      }
-    },
-    "mcp-mariadb-docker": {
+    "mcp-mariadb": {
       "command": "docker",
       "args": [
         "run",

@@ -1,6 +1,6 @@
 # mcp-mariadb
 
-A simple Model Context Protocol (MCP) server for MariaDB written in Python.
+A simple Model Context Protocol (MCP) server for MariaDB.
 
 ## Features
 
@@ -9,16 +9,19 @@ A simple Model Context Protocol (MCP) server for MariaDB written in Python.
 - Defaults to ~/.mcp-mariadb/config.yaml when the environment variable is not set
 - Exposes one tool: executesql
 
-## Installation
+## Usages
 
-```bash
-cd /workspaces/mcp-mariadb
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+### Installation
 
-## Configuration
+Use one of the sample in editor's mcp config file, put in your repo:
+- `.cursor/mcp.json`
+- `.antigravity/mcp.config.json`
+- `.vscode/mcp.json`
+- `.windsurf/mcp.config.json`
+
+Notes: remove the `--network mcp-net` in the config file if your database is not configured to use the docker network `mcp-net`.
+
+### Configuration
 
 Create a YAML file such as:
 
@@ -30,35 +33,9 @@ mariadb:
   password: secret
 ```
 
-Set the environment variable to point at it:
-
-```bash
-export MCP_MARIADB_CONFIG=/path/to/config.yaml
-```
-
-If the environment variable is not set, the server will look for:
-
-```bash
-~/.mcp-mariadb/config.yaml
-```
-
-## Running the server
-
-```bash
-python server.py
-```
-
 ## Tool usage
 
-The server exposes a tool named executesql. It accepts a SQL string and returns the rows and row count from the MariaDB query.
-
-Example:
-
-```json
-{
-  "sql": "SELECT * FROM users LIMIT 10"
-}
-```
+Ask the AI agent to use it when work with mariadb database.
 
 ## Badges
 [![Wise](https://img.shields.io/badge/Funding-Wise-33cb56.svg?logo=wise)](https://wise.com/pay/me/siakn3)
