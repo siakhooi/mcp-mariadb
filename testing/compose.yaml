@@ -11,12 +11,17 @@ services:
       - mcp-net
     ports:
       - "3306:3306"
+    volumes:
+      - mariadb-data:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mariadb-admin", "ping", "-h", "127.0.0.1", "-uroot", "-psecret"]
       interval: 10s
       timeout: 5s
       retries: 10
 
+
+volumes:
+  mariadb-data:
 
 networks:
   mcp-net:
