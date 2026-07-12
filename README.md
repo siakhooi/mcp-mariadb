@@ -59,3 +59,7 @@ Example:
   "sql": "SELECT * FROM users LIMIT 10"
 }
 ```
+
+## Badges
+[![Wise](https://img.shields.io/badge/Funding-Wise-33cb56.svg?logo=wise)](https://wise.com/pay/me/siakn3)
+![visitors](https://hit-tztugwlsja-uc.a.run.app/?outputtype=badge&counter=ghmd-mcp-mariadb)
